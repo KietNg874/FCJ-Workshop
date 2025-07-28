@@ -21,7 +21,7 @@ pre : " <b> 2.4 </b> "
    Name: backup-success-notifications
    Display name: Backup Success Notifications
    ```
-![img](/images/2.prerequisite/sns1.png)
+![img](/FCJ-Workshop/images/2.prerequisite/sns1.png)
 
 3. **Access Policy**: Sử dụng mặc định (chỉ chủ sở hữu topic có thể publish)
 4. **Encryption**: Để mặc định (không cần mã hóa cho thông báo)
@@ -48,4 +48,4 @@ pre : " <b> 2.4 </b> "
 4. **Kiểm tra email của bạn** và nhấp vào liên kết xác nhận
 5. **Xác minh trạng thái** hiển thị "Confirmed"
 
-![img](/images/2.prerequisite/sns2.png)
+![img](/FCJ-Workshop/images/2.prerequisite/sns2.png)
