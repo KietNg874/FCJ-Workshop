@@ -8,7 +8,7 @@ pre : " <b> 2. </b> "
 
 Before building our serverless backup solution, we need to establish the foundational AWS services and security configurations. This section will guide you through setting up the essential infrastructure components that our backup system will depend on.
 
-![Prerequisites Setup](/images/2.prerequisite/001-setup.png)
+![Prerequisites Setup](/FCJ-Workshop/images/2.prerequisite/001-setup.png)
 
 ## What You'll Create
 
