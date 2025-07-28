@@ -29,7 +29,7 @@ pre : " <b> 3.4. </b> "
    Endpoint type: Regional
    ```
 
-![img](/images/3.svlessimp/api1.png)
+![img](/FCJ-Workshop/images/3.svlessimp/api1.png)
 
 ### Create API Resources and Methods
 
@@ -50,7 +50,7 @@ pre : " <b> 3.4. </b> "
    Lambda Function: enhanced-dynamodb-backup
    ```
 
-![img](/images/3.svlessimp/api2.png)
+![img](/FCJ-Workshop/images/3.svlessimp/api2.png)
 
 **Resource 2: /recovery**
 1. **Create resource**: `/recovery`
@@ -62,7 +62,7 @@ pre : " <b> 3.4. </b> "
 2. **Create method**: **GET**
 3. **Integration**: Create a simple status function or use mock integration
 
-![img](/images/3.svlessimp/api3.png)
+![img](/FCJ-Workshop/images/3.svlessimp/api3.png)
 
 ### Deploy API
 
@@ -73,4 +73,4 @@ pre : " <b> 3.4. </b> "
    Stage description: Development stage for backup API
    ```
 
-![img](/images/3.svlessimp/api4.png)
+![img](/FCJ-Workshop/images/3.svlessimp/api4.png)
