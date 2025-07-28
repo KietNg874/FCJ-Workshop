@@ -31,7 +31,7 @@ pre : " <b> 3.3. </b> "
    ```
    *Điều này chạy lúc 2 giờ sáng UTC mỗi ngày*
 
-![img](/images/3.svlessimp/bridge1.png)
+![img](/FCJ-Workshop/images/3.svlessimp/bridge1.png)
 
 4. **Cấu hình Target**
    ```
