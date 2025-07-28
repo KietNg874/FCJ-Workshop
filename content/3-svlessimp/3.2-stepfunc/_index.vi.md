@@ -17,7 +17,7 @@ pre : " <b> 3.2. </b> "
    - Truy cập https://console.aws.amazon.com/states/
    - Nhấp **"Create state machine"**
 
-![img](/images/3.svlessimp/state1.png)
+![img](/FCJ-Workshop/images/3.svlessimp/state1.png)
 
 2. **Chọn Authoring Method**
    ```
@@ -99,11 +99,11 @@ Sử dụng định nghĩa quy trình đơn giản này:
 
 **Quan trọng**: Thay thế `YOUR_ACCOUNT` bằng AWS Account ID thực tế của bạn
 
-![img](/images/3.svlessimp/state2.png)
+![img](/FCJ-Workshop/images/3.svlessimp/state2.png)
 
 ### Cấu hình IAM Role
 
 1. **Sử dụng role hiện có**: `StepFunctionsBackupRole`
 2. **Xem lại quyền** để đảm bảo nó có thể gọi Lambda và publish đến SNS
 
-![img](/images/3.svlessimp/state3.png)
+![img](/FCJ-Workshop/images/3.svlessimp/state3.png)
