@@ -28,7 +28,7 @@ pre : " <b> 1. </b> "
 ## Tổng quan về Dịch vụ AWS
 
 
-![Luồng dữ liệu Sao lưu Serverless](/images/001-backupdataflow.jpg)
+![Luồng dữ liệu Sao lưu Serverless](/FCJ-Workshop/images/001-backupdataflow.jpg)
 
 
 ### Dịch vụ Tính toán Cốt lõi
