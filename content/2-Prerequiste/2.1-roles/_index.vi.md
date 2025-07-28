@@ -31,7 +31,7 @@ pre : " <b> 2.1 </b> "
    - Điều này cung cấp quyền CloudWatch Logs cơ bản
    - Cho phép các hàm Lambda ghi logs
 
-![S3 Folders](/images/2.prerequisite/IAM1.png)
+![S3 Folders](/FCJ-Workshop/images/2.prerequisite/IAM1.png)
 
 ### Tạo Custom Backup Policy
 
