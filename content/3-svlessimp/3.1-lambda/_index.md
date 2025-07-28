@@ -8,7 +8,7 @@ pre : " <b> 3.1 </b> "
 
 Lambda functions are the core processing components of our serverless backup solution. In this section, you'll create three specialized functions that handle different aspects of the backup and recovery process.
 
-![Lambda Functions Overview](/images/3.svlessimp/001-overview.png)
+![Lambda Functions Overview](/FCJ-Workshop/images/3.svlessimp/001-overview.png)
 
 ## Function Architecture Overview
 
