@@ -43,7 +43,7 @@ pre : " <b> 2.2 </b> "
    - Object Lock: ❌ Disabled for this workshop
    - Click **"Create bucket"**
 
-![Setup S3 Bucket](/images/2.prerequisite/s3b1.png)
+![Setup S3 Bucket](/FCJ-Workshop/images/2.prerequisite/s3b1.png)
 
 ### Create Secondary Region Bucket
 
@@ -68,7 +68,8 @@ pre : " <b> 2.2 </b> "
    Status: ✅ Enabled
    Priority: 1
    ```
-![S3 Folders](/images/2.prerequisite/s3b3.png)
+![S3 Folders](/FCJ-Workshop/images/2.prerequisite/s3b3.png)
+
 4. **Source Configuration**
    ```
    Source: ✅ Entire bucket
@@ -103,4 +104,4 @@ In your **primary bucket**, create these folders:
    - `config-backups/`
    - `validation-reports/`
 
-![S3 Folders](/images/2.prerequisite/s3b2.png)
+![S3 Folders](/FCJ-Workshop/images/2.prerequisite/s3b2.png)
