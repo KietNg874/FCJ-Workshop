@@ -31,7 +31,7 @@ pre : " <b> 2.1 </b> "
    - This provides basic CloudWatch Logs permissions
    - Allows Lambda functions to write logs
 
-![S3 Folders](/images/2.prerequisite/IAM1.png)
+![S3 Folders](/FCJ-Workshop/images/2.prerequisite/IAM1.png)
 
 ### Create Custom Backup Policy
 
