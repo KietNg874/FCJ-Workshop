@@ -33,7 +33,7 @@ pre : " <b> 4.2. </b> "
    }
    ```
 
-![img](/images/4.testing/TEST_stepexec.png)
+![img](/FCJ-Workshop/images/4.testing/TEST_stepexec.png)
 
 
 4. **Monitor execution**:
@@ -42,7 +42,7 @@ pre : " <b> 4.2. </b> "
    - ✅ Check execution time < 2 minutes
    - ✅ Verify success notification received
    
-![img](/images/4.testing/TEST_stepok.png)
+![img](/FCJ-Workshop/images/4.testing/TEST_stepok.png)
 
 ### Test Workflow Error Handling
 
@@ -85,7 +85,7 @@ pre : " <b> 4.2. </b> "
    - ✅ Verify 200 response
    - ✅ Check response body contains backup results
 
-![img](/images/4.testing/TEST_api.png)
+![img](/FCJ-Workshop/images/4.testing/TEST_api.png)
 
 2. **Test /recovery endpoint**:
    - Go to `/recovery` → `POST` → `TEST`
@@ -97,7 +97,7 @@ pre : " <b> 4.2. </b> "
    ```
    - ✅ Verify successful recovery response
 
-![img](/images/4.testing/TEST_apisucc.png)
+![img](/FCJ-Workshop/images/4.testing/TEST_apisucc.png)
 
 {{% notice info %}}
 **Integration Testing**: This validates that all your components work together correctly. Pay attention to data flow between services and error propagation.
