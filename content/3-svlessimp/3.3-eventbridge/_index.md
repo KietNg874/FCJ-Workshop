@@ -31,7 +31,7 @@ pre : " <b> 3.3. </b> "
    ```
    *This runs at 2 AM UTC every day*
 
-![img](/images/3.svlessimp/bridge1.png)
+![img](/FCJ-Workshop/images/3.svlessimp/bridge1.png)
 
 4. **Target Configuration**
    ```
