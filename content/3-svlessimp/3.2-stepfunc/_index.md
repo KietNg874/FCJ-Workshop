@@ -17,7 +17,7 @@ pre : " <b> 3.2. </b> "
    - Go to https://console.aws.amazon.com/states/
    - Click **"Create state machine"**
 
-![img](/images/3.svlessimp/state1.png)
+![img](/FCJ-Workshop/images/3.svlessimp/state1.png)
 
 2. **Choose Authoring Method**
    ```
@@ -99,11 +99,11 @@ Use this simplified workflow definition:
 
 **Important**: Replace `YOUR_ACCOUNT` with your actual AWS Account ID
 
-![img](/images/3.svlessimp/state2.png)
+![img](/FCJ-Workshop/images/3.svlessimp/state2.png)
 
 ### Configure IAM Role
 
 1. **Use existing role**: `StepFunctionsBackupRole`
 2. **Review permissions** to ensure it can invoke Lambda and publish to SNS
 
-![img](/images/3.svlessimp/state3.png)
+![img](/FCJ-Workshop/images/3.svlessimp/state3.png)
