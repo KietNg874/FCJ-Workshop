@@ -8,7 +8,7 @@ pre : " <b> 2. </b> "
 
 Trước khi xây dựng giải pháp sao lưu serverless, chúng ta cần thiết lập các dịch vụ AWS cơ bản và cấu hình bảo mật. Phần này sẽ hướng dẫn bạn thiết lập các thành phần hạ tầng thiết yếu mà hệ thống sao lưu của chúng ta sẽ phụ thuộc vào.
 
-![Thiết lập Điều kiện tiên quyết](/images/2.prerequisite/001-setup.png)
+![Thiết lập Điều kiện tiên quyết](/FCJ-Workshop/images/2.prerequisite/001-setup.png)
 
 ## Những gì bạn sẽ tạo
 
