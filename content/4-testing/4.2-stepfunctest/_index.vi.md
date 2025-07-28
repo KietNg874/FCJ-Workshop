@@ -6,22 +6,15 @@ chapter : false
 pre : " <b> 4.2. </b> "
 ---
 
-### Objectives
-- Test Step Functions workflow end-to-end
-
----
-
-**Lưu ý**: Đây là bản dịch tự động từ nội dung gốc. Vui lòng tham khảo file gốc để biết chi tiết đầy đủ.
-
-**Note**: This is an automated translation from the original content. Please refer to the original file for complete details.
-
-- Validate workflow orchestration and error handling
-- Verify integration between components
+### Mục tiêu
+- Kiểm thử Step Functions workflow từ đầu đến cuối
+- Xác thực điều phối workflow và xử lý lỗi
+- Xác minh tích hợp giữa các thành phần
 
 ### Test Step Functions Workflow
 
-1. **Navigate to Step Functions Console**
-2. **Select** `enhanced-backup-orchestration` **state machine**
+1. **Điều hướng đến Step Functions Console**
+2. **Chọn** `enhanced-backup-orchestration` **state machine**
 3. **Start execution**:
    ```
    Execution name: integration-test-1
@@ -35,70 +28,173 @@ pre : " <b> 4.2. </b> "
 
 ![img](/FCJ-Workshop/images/4.testing/TEST_stepexec.png)
 
-
-4. **Monitor execution**:
-   - ✅ Watch visual workflow progress
-   - ✅ Verify each step completes successfully
-   - ✅ Check execution time < 2 minutes
-   - ✅ Verify success notification received
+4. **Giám sát execution**:
+   - ✅ Theo dõi tiến trình workflow trực quan
+   - ✅ Xác minh mỗi bước hoàn thành thành công
+   - ✅ Kiểm tra thời gian execution < 2 phút
+   - ✅ Xác minh nhận được thông báo thành công
    
 ![img](/FCJ-Workshop/images/4.testing/TEST_stepok.png)
 
 ### Test Workflow Error Handling
 
-1. **Temporarily modify** backup function to cause failure:
-   - Change environment variable to invalid S3 bucket
-   - Or modify code to throw exception
+1. **Tạm thời sửa đổi** backup function để gây lỗi:
+   - Thay đổi environment variable thành S3 bucket không hợp lệ
+   - Hoặc sửa đổi code để throw exception
 
-2. **Start execution** and verify:
-   - ✅ Workflow catches error
-   - ✅ Failure handler executes
-   - ✅ Failure notification sent
-   - ✅ Execution shows failed status with details
+2. **Start execution** và xác minh:
+   - ✅ Workflow bắt được lỗi
+   - ✅ Failure handler thực thi
+   - ✅ Thông báo thất bại được gửi
+   - ✅ Execution hiển thị trạng thái failed với chi tiết
 
-3. **Restore** function to working state
+3. **Khôi phục** function về trạng thái hoạt động
 
 ### Test EventBridge Scheduling
 
-1. **Temporarily modify** daily backup rule:
-   - Change schedule to `cron(*/2 * * * ? *)` (every 2 minutes)
-   - Save the rule
+1. **Tạm thời sửa đổi** daily backup rule:
+   - Thay đổi schedule thành `cron(*/2 * * * ? *)` (mỗi 2 phút)
+   - Lưu rule
 
-2. **Wait 2-3 minutes** and verify:
-   - ✅ Step Functions execution triggered automatically
-   - ✅ Backup completed successfully
-   - ✅ New backup files in S3
+2. **Đợi 2-3 phút** và xác minh:
+   - ✅ Step Functions execution được kích hoạt tự động
+   - ✅ Backup hoàn thành thành công
+   - ✅ Backup files mới trong S3
 
-3. **Reset schedule** to original `cron(0 2 * * ? *)`
+3. **Reset schedule** về ban đầu `cron(0 2 * * ? *)`
 
 ### Test API Gateway Integration
 
-1. **Navigate to API Gateway Console**
+1. **Điều hướng đến API Gateway Console**
 2. **Test /backup endpoint**:
-   - Go to `/backup` → `POST` → `TEST`
+   - Truy cập `/backup` → `POST` → `TEST`
    - Request body:
    ```json
    {
      "tables": ["app-users"]
    }
    ```
-   - ✅ Verify 200 response
-   - ✅ Check response body contains backup results
+   - ✅ Xác minh response 200
+   - ✅ Kiểm tra response body chứa backup results
 
 ![img](/FCJ-Workshop/images/4.testing/TEST_api.png)
 
 2. **Test /recovery endpoint**:
-   - Go to `/recovery` → `POST` → `TEST`
+   - Truy cập `/recovery` → `POST` → `TEST`
    - Request body:
    ```json
    {
      "table_name": "app-users"
    }
    ```
-   - ✅ Verify successful recovery response
+   - ✅ Xác minh response recovery thành công
 
 ![img](/FCJ-Workshop/images/4.testing/TEST_apisucc.png)
 
 {{% notice info %}}
-**Integration Testing**: This validates that all your components work together correctly. Pay attention to data flow between services and error propagation.
+**Integration Testing**: Điều này xác thực rằng tất cả các thành phần của bạn hoạt động cùng nhau một cách chính xác. Chú ý đến luồng dữ liệu giữa các dịch vụ và sự lan truyền lỗi.
 {{% /notice %}}
+
+### Kiểm tra Chi tiết
+
+#### **Step Functions Execution Success**
+Khi workflow thành công, bạn sẽ thấy:
+
+**Visual Workflow:**
+- 🟢 BackupTables: SUCCEEDED
+- 🟢 CheckBackupSuccess: SUCCEEDED  
+- 🟢 SendSuccessNotification: SUCCEEDED
+
+**Execution Output:**
+```json
+{
+  "statusCode": 200,
+  "body": {
+    "message": "Enhanced backup hoàn thành thành công",
+    "backup_results": [
+      {
+        "table": "app-users",
+        "filename": "dynamodb-backups/app-users-backup-2025-01-28-XX-XX-XX.json",
+        "item_count": 3,
+        "status": "success"
+      },
+      {
+        "table": "app-orders", 
+        "filename": "dynamodb-backups/app-orders-backup-2025-01-28-XX-XX-XX.json",
+        "item_count": 3,
+        "status": "success"
+      },
+      {
+        "table": "backup-metadata",
+        "filename": "dynamodb-backups/backup-metadata-backup-2025-01-28-XX-XX-XX.json", 
+        "item_count": 1,
+        "status": "success"
+      }
+    ]
+  }
+}
+```
+
+#### **Error Handling Test Results**
+Khi có lỗi, workflow sẽ:
+
+**Visual Workflow:**
+- 🔴 BackupTables: FAILED
+- 🟢 BackupFailureHandler: SUCCEEDED
+
+**Error Details:**
+```json
+{
+  "Error": "States.TaskFailed",
+  "Cause": "Lambda function failed with error: S3 bucket not found"
+}
+```
+
+#### **EventBridge Scheduled Execution**
+- Execution được tự động tạo với tên như: `scheduled-execution-2025-01-28-XX-XX-XX`
+- Input tự động từ EventBridge rule
+- Thời gian execution khớp với schedule
+
+#### **API Gateway Test Results**
+
+**Backup Endpoint Success:**
+```json
+{
+  "statusCode": 200,
+  "body": {
+    "message": "Enhanced backup hoàn thành thành công",
+    "backup_results": [...],
+    "validation_results": [...]
+  }
+}
+```
+
+**Recovery Endpoint Success:**
+```json
+{
+  "statusCode": 200, 
+  "body": {
+    "message": "Recovery hoàn thành thành công",
+    "table_name": "app-users",
+    "items_restored": 3,
+    "validation_passed": true
+  }
+}
+```
+
+### Troubleshooting Integration Issues
+
+#### **Step Functions Failures:**
+1. **Lambda Function Errors**: Kiểm tra CloudWatch logs của Lambda functions
+2. **IAM Permission Issues**: Xác minh Step Functions role có quyền invoke Lambda
+3. **Input/Output Mapping**: Kiểm tra data flow giữa các states
+
+#### **EventBridge Issues:**
+1. **Schedule Expression**: Xác minh cron expression đúng định dạng
+2. **Target Configuration**: Kiểm tra Step Functions ARN trong rule target
+3. **IAM Permissions**: EventBridge cần quyền để start Step Functions execution
+
+#### **API Gateway Issues:**
+1. **Lambda Integration**: Xác minh Lambda proxy integration được cấu hình đúng
+2. **CORS Issues**: Bật CORS nếu cần thiết cho web clients
+3. **Request/Response Mapping**: Kiểm tra data transformation

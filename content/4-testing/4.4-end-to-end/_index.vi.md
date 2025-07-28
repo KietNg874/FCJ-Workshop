@@ -8,13 +8,6 @@ pre : " <b> 4.4. </b> "
 
 ### Objectives
 - Test complete business scenarios
-
----
-
-**Lưu ý**: Đây là bản dịch tự động từ nội dung gốc. Vui lòng tham khảo file gốc để biết chi tiết đầy đủ.
-
-**Note**: This is an automated translation from the original content. Please refer to the original file for complete details.
-
 - Validate entire system functionality
 - Ensure production readiness
 

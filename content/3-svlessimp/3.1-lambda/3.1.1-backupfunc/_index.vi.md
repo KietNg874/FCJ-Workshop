@@ -8,25 +8,18 @@ pre : " <b> 3.1.1 </b> "
 
 ### Enhanced Backup Function
 
+1. **Điều hướng đến Lambda Console**
+   - Truy cập https://console.aws.amazon.com/lambda/
+   - Nhấp **"Create function"**
 
----
-
-**Lưu ý**: Đây là bản dịch tự động từ nội dung gốc. Vui lòng tham khảo file gốc để biết chi tiết đầy đủ.
-
-**Note**: This is an automated translation from the original content. Please refer to the original file for complete details.
-
-1. **Navigate to Lambda Console**
-   - Go to https://console.aws.amazon.com/lambda/
-   - Click **"Create function"**
-
-2. **Basic Configuration**
+2. **Cấu hình Cơ bản**
    ```
    Function name: enhanced-dynamodb-backup
    Runtime: Python 3.*
    Architecture: x86_64
    ```
 
-3. **Permissions**
+3. **Quyền**
    ```
    Execution role: Use an existing role
    Existing role: EnhancedBackupLambdaRole
@@ -34,23 +27,22 @@ pre : " <b> 3.1.1 </b> "
 
 ![img](/FCJ-Workshop/images/3.svlessimp/lambda1.png)
 
-4. Click **"Create function"**
+4. Nhấp **"Create function"**
 
-5. **Advanced Settings**
+5. **Cài đặt Nâng cao**
    ```
    Enable X-Ray tracing: ✅ Active
    Memory: 512 MB
    Timeout: 5 minutes
-   Environment variables: (configure after creation)
+   Environment variables: (cấu hình sau khi tạo)
    ```
 ![img](/FCJ-Workshop/images/3.svlessimp/lambda2.png)
 
-
-Enable X-Ray tracing
+Bật X-Ray tracing
 
 ![img](/FCJ-Workshop/images/3.svlessimp/lambda3.png)
 
-### Add Enhanced Backup Code
+### Thêm Enhanced Backup Code
 
 ```python
 import json
@@ -63,14 +55,14 @@ from botocore.exceptions import ClientError
 import time
 import random
 
-# Initialize AWS clients
+# Khởi tạo AWS clients
 dynamodb = boto3.resource('dynamodb')
 s3 = boto3.client('s3')
 sns = boto3.client('sns')
 cloudwatch = boto3.client('cloudwatch')
 
 def lambda_handler(event, context):
-    """Enhanced backup function with validation and error handling"""
+    """Enhanced backup function với validation và error handling"""
     
     backup_bucket = os.environ.get('BACKUP_BUCKET', 'serverless-backup-ntk')
     success_topic = os.environ.get('SUCCESS_TOPIC_ARN')
@@ -84,13 +76,13 @@ def lambda_handler(event, context):
             result = backup_table_with_retry(table_name, backup_bucket)
             backup_results.append(result)
         
-        # Validate all backups
+        # Xác thực tất cả backups
         validation_results = validate_backups(backup_results, backup_bucket)
         
         # Publish custom metrics
         publish_backup_metrics(backup_results)
         
-        # Send success notification
+        # Gửi thông báo thành công
         if success_topic:
             send_notification(success_topic, 'Backup Success', {
                 'backup_results': backup_results,
@@ -100,16 +92,16 @@ def lambda_handler(event, context):
         return {
             'statusCode': 200,
             'body': json.dumps({
-                'message': 'Enhanced backup completed successfully',
+                'message': 'Enhanced backup hoàn thành thành công',
                 'backup_results': backup_results,
                 'validation_results': validation_results
             }, default=str)
         }
         
     except Exception as e:
-        error_message = f'Enhanced backup failed: {str(e)}'
+        error_message = f'Enhanced backup thất bại: {str(e)}'
         
-        # Send failure notification
+        # Gửi thông báo thất bại
         if failure_topic:
             send_notification(failure_topic, 'Backup Failure', {
                 'error': error_message,
@@ -119,13 +111,13 @@ def lambda_handler(event, context):
         return {
             'statusCode': 500,
             'body': json.dumps({
-                'message': 'Enhanced backup failed',
+                'message': 'Enhanced backup thất bại',
                 'error': str(e)
             })
         }
 
 def backup_table_with_retry(table_name, backup_bucket, max_retries=3):
-    """Backup table with exponential backoff retry"""
+    """Backup table với exponential backoff retry"""
     
     for attempt in range(max_retries):
         try:
@@ -133,16 +125,16 @@ def backup_table_with_retry(table_name, backup_bucket, max_retries=3):
         except ClientError as e:
             if attempt == max_retries - 1:
                 raise
-            # Exponential backoff with jitter
+            # Exponential backoff với jitter
             wait_time = (2 ** attempt) + random.uniform(0, 1)
             time.sleep(wait_time)
 
 def backup_single_table(table_name, backup_bucket):
-    """Backup a single DynamoDB table"""
+    """Backup một DynamoDB table duy nhất"""
     
     table = dynamodb.Table(table_name)
     
-    # Scan table with pagination
+    # Scan table với pagination
     items = []
     response = table.scan()
     items.extend(response['Items'])
@@ -151,16 +143,16 @@ def backup_single_table(table_name, backup_bucket):
         response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
         items.extend(response['Items'])
     
-    # Convert Decimal to float for JSON serialization
+    # Chuyển đổi Decimal thành float cho JSON serialization
     for item in items:
         for key, value in item.items():
             if isinstance(value, Decimal):
                 item[key] = float(value)
     
-    # Calculate checksum for integrity
+    # Tính checksum cho tính toàn vẹn
     checksum = calculate_checksum(items)
     
-    # Create backup data structure
+    # Tạo cấu trúc dữ liệu backup
     backup_data = {
         'table_name': table_name,
         'backup_timestamp': datetime.now().isoformat(),
@@ -170,7 +162,7 @@ def backup_single_table(table_name, backup_bucket):
         'version': '2.0'
     }
     
-    # Upload to S3 with default encryption
+    # Upload lên S3 với default encryption
     timestamp = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     filename = f'dynamodb-backups/{table_name}-backup-{timestamp}.json'
     
@@ -196,17 +188,17 @@ def backup_single_table(table_name, backup_bucket):
     }
 
 def calculate_checksum(items):
-    """Calculate SHA256 checksum for data integrity"""
+    """Tính SHA256 checksum cho tính toàn vẹn dữ liệu"""
     content = json.dumps(items, sort_keys=True, default=str)
     return hashlib.sha256(content.encode()).hexdigest()
 
 def validate_backups(backup_results, backup_bucket):
-    """Validate backup integrity"""
+    """Xác thực tính toàn vẹn backup"""
     validation_results = []
     
     for backup in backup_results:
         try:
-            # Download and verify backup file
+            # Download và verify backup file
             response = s3.get_object(Bucket=backup_bucket, Key=backup['filename'])
             backup_data = json.loads(response['Body'].read())
             
@@ -266,7 +258,7 @@ def publish_backup_metrics(backup_results):
     )
 
 def send_notification(topic_arn, subject, message_data):
-    """Send SNS notification"""
+    """Gửi SNS notification"""
     sns.publish(
         TopicArn=topic_arn,
         Subject=subject,
@@ -277,16 +269,15 @@ def send_notification(topic_arn, subject, message_data):
 
 ![img](/FCJ-Workshop/images/3.svlessimp/lambda4.png)
 
-### Configure Environment Variables
+### Cấu hình Environment Variables
 
-1. Go to **Configuration** → **Environment variables**
-2. Add these variables:
+1. Truy cập **Configuration** → **Environment variables**
+2. Thêm các biến này:
    ```
    BACKUP_BUCKET = serverless-backup-primary-[yourname]
    SUCCESS_TOPIC_ARN = arn:aws:sns:us-east-1:ACCOUNT:backup-success-notifications
    FAILURE_TOPIC_ARN = arn:aws:sns:us-east-1:ACCOUNT:backup-failure-notifications
    ```
-   *Replace with your actual bucket name and SNS topic ARNs*
-
+   *Thay thế bằng tên bucket thực tế và SNS topic ARNs của bạn*
 
 ![img](/FCJ-Workshop/images/3.svlessimp/lambda5.png)

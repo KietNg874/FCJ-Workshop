@@ -6,16 +6,9 @@ chapter : false
 pre : " <b> 3.1.2 </b> "
 ---
 
-### Create Backup Validator Function
+### Tạo Backup Validator Function
 
-
----
-
-**Lưu ý**: Đây là bản dịch tự động từ nội dung gốc. Vui lòng tham khảo file gốc để biết chi tiết đầy đủ.
-
-**Note**: This is an automated translation from the original content. Please refer to the original file for complete details.
-
-1. **Create new Lambda function**:
+1. **Tạo Lambda function mới**:
    ```
    Function name: backup-validator
    Runtime: Python 3.*
@@ -26,7 +19,7 @@ pre : " <b> 3.1.2 </b> "
 
 ![img](/FCJ-Workshop/images/3.svlessimp/lambda6.png)
 
-2. **Add validation code**:
+2. **Thêm validation code**:
 
 ```python
 import json
@@ -38,17 +31,17 @@ s3 = boto3.client('s3')
 sns = boto3.client('sns')
 
 def lambda_handler(event, context):
-    """Validate backup integrity and completeness"""
+    """Xác thực tính toàn vẹn và đầy đủ của backup"""
     
     backup_bucket = event.get('backup_bucket', 'serverless-backup-ntk')
     backup_files = event.get('backup_files', [])
     
-    # Validate input
+    # Xác thực input
     if not backup_files:
         return {
             'statusCode': 400,
             'body': json.dumps({
-                'message': 'No backup files provided for validation',
+                'message': 'Không có backup files nào được cung cấp để xác thực',
                 'validation_results': [],
                 'overall_success': False
             })
@@ -63,7 +56,7 @@ def lambda_handler(event, context):
             response = s3.get_object(Bucket=backup_bucket, Key=filename)
             backup_data = json.loads(response['Body'].read())
             
-            # Perform validation checks
+            # Thực hiện các kiểm tra xác thực
             validation_result = {
                 'filename': filename,
                 'table': backup_data.get('table_name', 'unknown'),
@@ -108,17 +101,17 @@ def lambda_handler(event, context):
     }
 
 def validate_structure(backup_data):
-    """Validate backup data structure"""
+    """Xác thực cấu trúc dữ liệu backup"""
     required_fields = ['table_name', 'backup_timestamp', 'item_count', 'data', 'checksum']
     
     if not isinstance(backup_data, dict):
         return False
     
-    # Check all required fields exist
+    # Kiểm tra tất cả các trường bắt buộc tồn tại
     if not all(field in backup_data for field in required_fields):
         return False
     
-    # Additional structure validation
+    # Xác thực cấu trúc bổ sung
     if not isinstance(backup_data.get('data'), list):
         return False
     
@@ -128,7 +121,7 @@ def validate_structure(backup_data):
     return True
 
 def validate_checksum(backup_data):
-    """Validate data integrity using checksum"""
+    """Xác thực tính toàn vẹn dữ liệu sử dụng checksum"""
     if 'checksum' not in backup_data or 'data' not in backup_data:
         return False
     
@@ -140,30 +133,70 @@ def validate_checksum(backup_data):
         return False
 
 def validate_timestamp(timestamp_str):
-    """Validate backup timestamp is recent (within 24 hours)"""
+    """Xác thực timestamp backup là gần đây (trong vòng 24 giờ)"""
     try:
-        # Handle different timestamp formats
+        # Xử lý các định dạng timestamp khác nhau
         if timestamp_str.endswith('Z'):
             backup_time = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
         elif '+' in timestamp_str or timestamp_str.endswith('00:00'):
             backup_time = datetime.fromisoformat(timestamp_str)
         else:
-            # Assume UTC if no timezone info
+            # Giả định UTC nếu không có thông tin timezone
             backup_time = datetime.fromisoformat(timestamp_str).replace(tzinfo=timezone.utc)
         
         current_time = datetime.now(timezone.utc)
         
-        # Convert backup_time to UTC if it has timezone info
+        # Chuyển đổi backup_time sang UTC nếu có thông tin timezone
         if backup_time.tzinfo is not None:
             backup_time_utc = backup_time.astimezone(timezone.utc)
         else:
             backup_time_utc = backup_time.replace(tzinfo=timezone.utc)
         
         time_diff = current_time - backup_time_utc
-        return time_diff.total_seconds() < 86400  # 24 hours
+        return time_diff.total_seconds() < 86400  # 24 giờ
         
     except Exception as e:
-        print(f"Timestamp validation error: {str(e)}")
+        print(f"Lỗi xác thực timestamp: {str(e)}")
         return False
 
+```
+
+### Tính năng Chính của Validator
+
+#### **Kiểm tra Cấu trúc**
+- Xác minh tất cả các trường bắt buộc có mặt
+- Kiểm tra kiểu dữ liệu của từng trường
+- Đảm bảo dữ liệu có định dạng đúng
+
+#### **Xác thực Checksum**
+- Tính toán lại checksum từ dữ liệu
+- So sánh với checksum được lưu trữ
+- Phát hiện bất kỳ sự thay đổi dữ liệu nào
+
+#### **Kiểm tra Timestamp**
+- Xác minh backup được tạo gần đây
+- Hỗ trợ nhiều định dạng timestamp
+- Cảnh báo về backup cũ
+
+#### **Báo cáo Chi tiết**
+- Kết quả xác thực cho từng file
+- Thống kê tổng quan
+- Thông tin lỗi chi tiết
+
+### Cách sử dụng
+
+Function này được gọi bởi Step Functions hoặc có thể được test độc lập với payload:
+
+```json
+{
+  "backup_bucket": "serverless-backup-primary-yourname",
+  "backup_files": [
+    {
+      "filename": "dynamodb-backups/app-users-backup-2025-01-28-10-30-00.json"
+    },
+    {
+      "filename": "dynamodb-backups/app-orders-backup-2025-01-28-10-30-00.json"
+    }
+  ]
+}
 ```
