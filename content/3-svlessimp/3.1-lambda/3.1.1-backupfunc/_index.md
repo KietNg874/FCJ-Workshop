@@ -25,7 +25,7 @@ pre : " <b> 3.1.1 </b> "
    Existing role: EnhancedBackupLambdaRole
    ```
 
-![img](/images/3.svlessimp/lambda1.png)
+![img](/FCJ-Workshop/images/3.svlessimp/lambda1.png)
 
 4. Click **"Create function"**
 
@@ -36,12 +36,12 @@ pre : " <b> 3.1.1 </b> "
    Timeout: 5 minutes
    Environment variables: (configure after creation)
    ```
-![img](/images/3.svlessimp/lambda2.png)
+![img](/FCJ-Workshop/images/3.svlessimp/lambda2.png)
 
 
 Enable X-Ray tracing
 
-![img](/images/3.svlessimp/lambda3.png)
+![img](/FCJ-Workshop/images/3.svlessimp/lambda3.png)
 
 ### Add Enhanced Backup Code
 
@@ -268,7 +268,7 @@ def send_notification(topic_arn, subject, message_data):
 
 ```
 
-![img](/images/3.svlessimp/lambda4.png)
+![img](/FCJ-Workshop/images/3.svlessimp/lambda4.png)
 
 ### Configure Environment Variables
 
@@ -282,4 +282,4 @@ def send_notification(topic_arn, subject, message_data):
    *Replace with your actual bucket name and SNS topic ARNs*
 
 
-![img](/images/3.svlessimp/lambda5.png)
+![img](/FCJ-Workshop/images/3.svlessimp/lambda5.png)
