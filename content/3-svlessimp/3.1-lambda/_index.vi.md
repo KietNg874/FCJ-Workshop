@@ -8,7 +8,7 @@ pre : " <b> 3.1 </b> "
 
 Các hàm Lambda là thành phần xử lý cốt lõi của giải pháp sao lưu serverless. Trong phần này, bạn sẽ tạo ba hàm chuyên biệt xử lý các khía cạnh khác nhau của quy trình sao lưu và khôi phục.
 
-![Tổng quan Lambda Functions](/images/3.svlessimp/001-overview.png)
+![Tổng quan Lambda Functions](/FCJ-Workshop/images/3.svlessimp/001-overview.png)
 
 ## Tổng quan Kiến trúc Function
 
