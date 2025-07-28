@@ -21,7 +21,7 @@ pre : " <b> 2.4 </b> "
    Name: backup-success-notifications
    Display name: Backup Success Notifications
    ```
-![img](/images/2.prerequisite/sns1.png)
+![img](/FCJ-Workshop/images/2.prerequisite/sns1.png)
 
 3. **Access Policy**: Use default (only topic owner can publish)
 4. **Encryption**: Leave default (no encryption needed for notifications)
@@ -48,4 +48,4 @@ pre : " <b> 2.4 </b> "
 4. **Check your email** and click the confirmation link
 5. **Verify status** shows "Confirmed"
 
-![img](/images/2.prerequisite/sns2.png)
+![img](/FCJ-Workshop/images/2.prerequisite/sns2.png)
