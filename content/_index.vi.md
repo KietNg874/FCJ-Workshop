@@ -9,7 +9,7 @@ chapter : false
 ### Tổng quan
 Trong workshop toàn diện này, bạn sẽ xây dựng một giải pháp sao lưu serverless sẵn sàng cho sản xuất, tận dụng các công nghệ serverless của AWS để cung cấp bảo vệ dữ liệu tự động, có thể mở rộng và hiệu quả về chi phí. Học cách triển khai các chiến lược khôi phục thảm họa sử dụng AWS Lambda, Step Functions, S3, DynamoDB và các dịch vụ được quản lý khác.
 
-![Kiến trúc Sao lưu Serverless](/images/backup-architecture.jpg) 
+![Kiến trúc Sao lưu Serverless](/FCJ-Workshop/images/backup-architecture.jpg) 
 
 ### Những gì bạn sẽ học
 - Xây dựng các giải pháp sao lưu serverless sử dụng AWS Lambda và Step Functions
