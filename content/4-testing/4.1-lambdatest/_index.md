@@ -29,7 +29,7 @@ pre : " <b> 4.1. </b> "
    - ✅ Response contains backup_results
    - ✅ Response contains validation_results
 
-![img](/images/4.testing/TEST_Lambda.png)
+![img](/FCJ-Workshop/images/4.testing/TEST_Lambda.png)
 
 6. **Check S3 bucket** for new backup files:
    - Navigate to your primary S3 bucket
@@ -37,11 +37,11 @@ pre : " <b> 4.1. </b> "
    - Verify 3 new backup files created
    - Check file metadata and encryption
 
-![img](/images/4.testing/TEST_s3.png)
+![img](/FCJ-Workshop/images/4.testing/TEST_s3.png)
 
 7. **Verify SNS notification** received in email
 
-![img](/images/4.testing/TEST_mail.png)
+![img](/FCJ-Workshop/images/4.testing/TEST_mail.png)
 
 {{% notice tip %}}
 **Lambda Testing**: Always test your Lambda functions with realistic data. The test events should mirror what your function will receive in production.
