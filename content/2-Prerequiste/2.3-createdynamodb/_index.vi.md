@@ -20,7 +20,8 @@ pre : " <b> 2.3 </b> "
    Table name: app-orders
    Partition key: orderId (String)
    ```
-![Img](/images/2.prerequisite/dynamodb1.png)
+![Img](/FCJ-Workshop/images/2.prerequisite/dynamodb1.png)
+
 3. **Cài đặt Bảng**
    ```
    Table class: DynamoDB Standard
