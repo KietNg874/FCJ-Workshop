@@ -28,7 +28,7 @@ pre : " <b> 1. </b> "
 ## AWS Services Overview
 
 
-![Serverless Backup Dataflow](/images/001-backupdataflow.jpg)
+![Serverless Backup Dataflow](/FCJ-Workshop/images/001-backupdataflow.jpg)
 
 
 ### Core Compute Services
