@@ -24,7 +24,7 @@ pre : " <b> 3.1.2 </b> "
    Timeout: 3 minutes
    ```
 
-![img](/images/3.svlessimp/lambda6.png)
+![img](/FCJ-Workshop/images/3.svlessimp/lambda6.png)
 
 2. **Add validation code**:
 
