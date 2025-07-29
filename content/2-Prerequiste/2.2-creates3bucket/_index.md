@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-### Objectives
-- Create secure S3 buckets with encryption
-- Configure cross-region replication for disaster recovery
-- Set up proper folder structure for organized backups
-
 ### Create Primary Backup Bucket
 
 1. **Navigate to S3 Console**
