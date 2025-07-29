@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-### Mục tiêu
-- Tạo bucket S3 an toàn với mã hóa
-- Cấu hình sao chép đa vùng cho khôi phục thảm họa
-- Thiết lập cấu trúc thư mục phù hợp cho sao lưu có tổ chức
-
 ### Tạo Primary Backup Bucket
 
 1. **Điều hướng đến S3 Console**
