@@ -10,8 +10,6 @@ Before building our serverless backup solution, we need to establish the foundat
 
 ![Prerequisites Setup](/FCJ-Workshop/images/2.prerequisite/001-setup.png)
 
-## What You'll Create
-
 In this prerequisites section, you'll establish the core infrastructure for your serverless backup solution:
 
 ### Security Foundation
@@ -32,22 +30,6 @@ In this prerequisites section, you'll establish the core infrastructure for your
 ### Notification System
 - **SNS Topic**: Alert system for backup success/failure notifications
 - **Email subscriptions**: Real-time notifications for operational events
-
-## Why These Prerequisites Matter
-
-{{% notice info %}}
-These foundational services are critical for a production-ready backup solution. Proper IAM roles ensure security, DynamoDB tables provide realistic data to backup, S3 buckets offer durable storage, and SNS enables operational visibility.
-{{% /notice %}}
-
-### Security Best Practices
-- **Least Privilege Access**: Each service gets only the permissions it needs
-- **Cross-Region Security**: Secure replication between AWS regions
-- **Audit Trail**: All actions are logged for compliance and troubleshooting
-
-### Operational Excellence
-- **Monitoring Ready**: Infrastructure prepared for comprehensive monitoring
-- **Scalable Foundation**: Services configured to handle growth
-- **Disaster Recovery**: Multi-region setup from the start
 
 ### Content
 2.1. [Create IAM Roles](2.1-roles/) \
