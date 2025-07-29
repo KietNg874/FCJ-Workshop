@@ -6,14 +6,7 @@ chapter : false
 pre : " <b> 1. </b> "
 ---
 
-## Tại sao chọn Serverless cho Sao lưu & Khôi phục Thảm họa?
-
-### Thách thức của Sao lưu Truyền thống
-- **Quản lý Hạ tầng**: Duy trì các máy chủ sao lưu, hệ thống lưu trữ và mạng
-- **Vấn đề Mở rộng**: Mở rộng thủ công trong thời gian cao điểm sao lưu
-- **Không hiệu quả về Chi phí**: Trả tiền cho tài nguyên nhàn rỗi trong thời gian không sao lưu
-- **Phức tạp**: Quản lý nhiều công cụ và hệ thống cho các loại sao lưu khác nhau
-- **Chi phí Bảo trì**: Vá lỗi, cập nhật và giám sát hạ tầng sao lưu
+## Tại sao chọn Serverless Backup & Disaster Recovery?
 
 ### Ưu điểm của Serverless
 - **Không cần Quản lý Hạ tầng**: Không có máy chủ để cung cấp, vá lỗi hoặc bảo trì
