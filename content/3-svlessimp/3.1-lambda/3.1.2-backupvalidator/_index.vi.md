@@ -6,8 +6,6 @@ chapter : false
 pre : " <b> 3.1.2 </b> "
 ---
 
-### Tạo Backup Validator Function
-
 1. **Tạo Lambda function mới**:
    ```
    Function name: backup-validator
