@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 4.2. </b> "
 ---
 
-### Mục tiêu
-- Kiểm thử Step Functions workflow từ đầu đến cuối
-- Xác thực điều phối workflow và xử lý lỗi
-- Xác minh tích hợp giữa các thành phần
-
 ### Test Step Functions Workflow
 
 1. **Điều hướng đến Step Functions Console**
