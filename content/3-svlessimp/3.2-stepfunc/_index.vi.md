@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 3.2. </b> "
 ---
 
-### Mục tiêu
-- Tạo điều phối quy trình với Step Functions
-- Triển khai xử lý lỗi và logic thử lại
-- Xây dựng giám sát quy trình trực quan
-
 ### Tạo Step Functions State Machine
 
 1. **Điều hướng đến Step Functions Console**
