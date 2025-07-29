@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 4.1. </b> "
 ---
 
-### Objectives
-- Test individual Lambda functions in isolation
-- Validate function responses and error handling
-- Verify environment variable configuration
-
 ### Test Enhanced Backup Function
 
 1. **Navigate to Lambda Console** → `enhanced-dynamodb-backup`
