@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 4.3. </b> "
 ---
 
-### Mục tiêu
-- Kiểm thử chức năng cross-region replication
-- Mô phỏng các kịch bản khôi phục thảm họa
-- Xác thực khả năng liên tục kinh doanh
-
 ### Xác minh Cross-Region Replication
 
 1. **Kiểm tra primary bucket** (us-east-1):
