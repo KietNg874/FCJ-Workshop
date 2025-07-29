@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 2.3 </b> "
 ---
 
-### Objectives
-- Create DynamoDB tables with security best practices
-- Enable point-in-time recovery and streams
-- Add sample data for testing backup functionality
-
 ### Create Application Tables
 
 **Table 1: app-orders**
