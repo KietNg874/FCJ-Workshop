@@ -8,7 +8,6 @@ pre : " <b> 1. </b> "
 
 ## Why Serverless for Backup & Disaster Recovery?
 
-### Serverless Advantages
 - **Zero Infrastructure Management**: No servers to provision, patch, or maintain
 - **Automatic Scaling**: Scales automatically based on workload demands
 - **Pay-per-Use**: Only pay for actual compute time and storage used
