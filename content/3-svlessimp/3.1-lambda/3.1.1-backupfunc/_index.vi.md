@@ -6,8 +6,6 @@ chapter : false
 pre : " <b> 3.1.1 </b> "
 ---
 
-### Enhanced Backup Function
-
 1. **Điều hướng đến Lambda Console**
    - Truy cập https://console.aws.amazon.com/lambda/
    - Nhấp **"Create function"**
