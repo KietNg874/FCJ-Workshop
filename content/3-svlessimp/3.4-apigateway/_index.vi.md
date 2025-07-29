@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 3.4. </b> "
 ---
 
-### Mục tiêu
-- Tạo REST API cho các hoạt động sao lưu
-- Cấu hình bảo mật và tích hợp API
-- Kiểm thử API endpoints
-
 ### Tạo REST API
 
 1. **Điều hướng đến API Gateway Console**
