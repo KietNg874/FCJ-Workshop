@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 2.3 </b> "
 ---
 
-### Mục tiêu
-- Tạo bảng DynamoDB với thực hành bảo mật tốt nhất
-- Bật point-in-time recovery và streams
-- Thêm dữ liệu mẫu để kiểm thử chức năng sao lưu
-
 ### Tạo Application Tables
 
 **Bảng 1: app-orders**
