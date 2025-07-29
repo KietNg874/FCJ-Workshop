@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 4.1. </b> "
 ---
 
-### Mục tiêu
-- Kiểm thử các Lambda functions riêng lẻ một cách độc lập
-- Xác thực phản hồi function và xử lý lỗi
-- Xác minh cấu hình environment variable
-
 ### Test Enhanced Backup Function
 
 1. **Điều hướng đến Lambda Console** → `enhanced-dynamodb-backup`
