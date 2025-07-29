@@ -6,13 +6,6 @@ chapter : false
 pre : " <b> 3.3. </b> "
 ---
 
-### Objectives
-- Create automated backup schedules
-- Configure EventBridge rules
-- Set up different backup frequencies
-
-### Create Daily Backup Schedule
-
 1. **Navigate to EventBridge Console**
    - Go to https://console.aws.amazon.com/events/
    - Click **Rules** → **"Create rule"**
