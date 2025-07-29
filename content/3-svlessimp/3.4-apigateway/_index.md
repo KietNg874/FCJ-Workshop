@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 3.4. </b> "
 ---
 
-### Objectives
-- Create REST API for backup operations
-- Configure API security and integration
-- Test API endpoints
-
 ### Create REST API
 
 1. **Navigate to API Gateway Console**
