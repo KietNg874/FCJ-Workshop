@@ -6,7 +6,7 @@ chapter : false
 ---
 # Serverless Backup & Disaster Recovery Workshop
 
-In this comprehensive workshop, you'll build a production-ready serverless backup solution that leverages AWS serverless technologies to provide automated, scalable, and cost-effective data protection. Learn how to implement disaster recovery strategies using AWS Lambda, Step Functions, S3, DynamoDB, and other managed services.
+In this workshop, you'll build a production-ready serverless backup solution that leverages AWS serverless technologies to provide automated, scalable, and cost-effective data protection. Learn how to implement disaster recovery strategies using AWS Lambda, Step Functions, S3, DynamoDB, and other managed services.
 
 ![Serverless Backup Architecture](/FCJ-Workshop/images/backup-architecture.jpg) 
 
