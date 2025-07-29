@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 3.3. </b> "
 ---
 
-### Mục tiêu
-- Tạo lịch sao lưu tự động
-- Cấu hình EventBridge rules
-- Thiết lập tần suất sao lưu khác nhau
-
 ### Tạo Daily Backup Schedule
 
 1. **Điều hướng đến EventBridge Console**
