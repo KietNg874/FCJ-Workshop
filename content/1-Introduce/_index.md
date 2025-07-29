@@ -8,13 +8,6 @@ pre : " <b> 1. </b> "
 
 ## Why Serverless for Backup & Disaster Recovery?
 
-### Traditional Backup Challenges
-- **Infrastructure Management**: Maintaining backup servers, storage systems, and networking
-- **Scaling Issues**: Manual scaling during peak backup windows
-- **Cost Inefficiency**: Paying for idle resources during non-backup periods
-- **Complexity**: Managing multiple tools and systems for different backup types
-- **Maintenance Overhead**: Patching, updating, and monitoring backup infrastructure
-
 ### Serverless Advantages
 - **Zero Infrastructure Management**: No servers to provision, patch, or maintain
 - **Automatic Scaling**: Scales automatically based on workload demands
