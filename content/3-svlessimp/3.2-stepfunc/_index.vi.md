@@ -6,8 +6,6 @@ chapter : false
 pre : " <b> 3.2. </b> "
 ---
 
-### Tạo Step Functions State Machine
-
 1. **Điều hướng đến Step Functions Console**
    - Truy cập https://console.aws.amazon.com/states/
    - Nhấp **"Create state machine"**
