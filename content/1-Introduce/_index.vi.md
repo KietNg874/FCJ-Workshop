@@ -8,7 +8,6 @@ pre : " <b> 1. </b> "
 
 ## Tại sao chọn Serverless Backup & Disaster Recovery?
 
-### Ưu điểm của Serverless
 - **Không cần Quản lý Hạ tầng**: Không có máy chủ để cung cấp, vá lỗi hoặc bảo trì
 - **Tự động Mở rộng**: Tự động mở rộng dựa trên nhu cầu khối lượng công việc
 - **Trả theo Sử dụng**: Chỉ trả tiền cho thời gian tính toán và lưu trữ thực tế được sử dụng
