@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 4.3. </b> "
 ---
 
-### Objectives
-- Test cross-region replication functionality
-- Simulate disaster recovery scenarios
-- Validate business continuity capabilities
-
 ### Verify Cross-Region Replication
 
 1. **Check primary bucket** (us-east-1):
