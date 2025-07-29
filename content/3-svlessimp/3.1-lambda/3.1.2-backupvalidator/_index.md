@@ -6,8 +6,6 @@ chapter : false
 pre : " <b> 3.1.2 </b> "
 ---
 
-### Create Backup Validator Function
-
 1. **Create new Lambda function**:
    ```
    Function name: backup-validator
