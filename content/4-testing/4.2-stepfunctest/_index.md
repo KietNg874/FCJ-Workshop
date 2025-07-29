@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 4.2. </b> "
 ---
 
-### Objectives
-- Test Step Functions workflow end-to-end
-- Validate workflow orchestration and error handling
-- Verify integration between components
-
 ### Test Step Functions Workflow
 
 1. **Navigate to Step Functions Console**
