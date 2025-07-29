@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 2.4 </b> "
 ---
 
-### Mục tiêu
-- Tạo SNS topics cho thông báo
-- Cấu hình đăng ký email
-- Kiểm thử việc gửi thông báo
-
 ### Tạo SNS Topics
 
 **Success Notifications Topic**
