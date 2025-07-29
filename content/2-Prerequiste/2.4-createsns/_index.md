@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 2.4 </b> "
 ---
 
-### Objectives
-- Create SNS topics for notifications
-- Configure email subscriptions
-- Test notification delivery
-
 ### Create SNS Topics
 
 **Success Notifications Topic**
