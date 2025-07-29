@@ -6,11 +6,6 @@ chapter : false
 pre : " <b> 3.2. </b> "
 ---
 
-### Objectives
-- Create workflow orchestration with Step Functions
-- Implement error handling and retry logic
-- Build visual workflow monitoring
-
 ### Create Step Functions State Machine
 
 1. **Navigate to Step Functions Console**
