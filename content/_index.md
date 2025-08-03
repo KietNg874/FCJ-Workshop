@@ -16,7 +16,6 @@ In this workshop, you'll build a production-ready serverless backup solution tha
 - Develop data validation and integrity checking processes
 - Set up comprehensive monitoring and alerting with CloudWatch and SNS
 - Design RESTful APIs for backup operations using API Gateway
-- Apply security best practices with IAM roles and encryption
 
 ### Content
  1. [Introduction](1-introduce/)
